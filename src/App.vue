@@ -20,9 +20,12 @@
           :key="input.id"
           class="flex align-items-center justify-content-between mb-4"
         >
-          <label class="text-base text-700 mr-2" :for="input.id">{{
+          <label class="text-base text-700 mr-2">{{
             input.label
-          }}</label>
+            
+          }} 
+          <i v-if="input.tooltip" v-tooltip.top="{ value: input.tooltip }" class="pi pi-question-circle text-cyan-700" ></i>
+        </label>
           <InputNumber
             v-if="input.type === 'Int' || input.type === 'Float'"
             v-model="input.value"
@@ -54,7 +57,7 @@
             :placeholder="input.placeholder"
             autocomplete="off"
             :feedback="false"
-            toggleMask
+            :toggleMask="!!input.value"
           />
           <InputSwitch
             v-if="input.type === 'Boolean'"
@@ -67,11 +70,14 @@
           v-if="settingsName === 'power'"
           class="flex align-items-center justify-content-between mb-4"
         >
-          <span class="text-base text-700 mr-2">Сброс питания 'Пульс +12'</span>
+          <span class="text-base text-700 mr-2">
+            Сброс питания 'Пульс +12'
+            <i v-tooltip.top="'Подсказка'" class="pi pi-question-circle text-cyan-700" ></i>
+          </span>
           <Button
           label="Выполнить"
           :disabled="isLoading"
-          class="p-button-success p-button-sm"
+          class="p-button-info p-button-sm"
           @click="onSubmit(settings)"
           />
         </div>
@@ -79,11 +85,14 @@
           v-if="settingsName === 'power'"
           class="flex align-items-center justify-content-between mb-4"
         >
-          <span class="text-base text-700 mr-2">Сброс питания 'MDB</span>
+          <span class="text-base text-700 mr-2">
+            Сброс питания 'MDB
+            <i  v-tooltip.top="'Подсказка'" class="pi pi-question-circle text-cyan-700" ></i>
+          </span>
           <Button
           label="Выполнить"
           :disabled="isLoading"
-          class="p-button-success p-button-sm"
+          class="p-button-info p-button-sm"
           @click="onSubmit(settings)"
           />
         </div>
@@ -185,8 +194,8 @@ export default {
         accept: () => {
           this.$toast.add({
             severity: "info",
-            summary: "Confirmed",
-            detail: "Настройки сброшены",
+            summary: "Отправлено",
+            detail: "Запрос на сброс параметров отправлен",
             life: 3000,
           });
         },
@@ -214,5 +223,11 @@ export default {
 }
 .cran-form .p-inputnumber-input {
   width: inherit;
+}
+.cran-form .pi-question-circle {
+  font-size: 0.7rem;
+  position: absolute;
+  padding-left: 3px;
+  cursor: pointer;
 }
 </style>

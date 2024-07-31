@@ -7,7 +7,7 @@ export const machineCranSettings = {
         name: "game price",
         label: "Цена игры",
         type: "Float",
-        value: null,
+        tooltip: 'подсказка', value: null,
         placeholder: "дробь",
       },
       {
@@ -15,7 +15,7 @@ export const machineCranSettings = {
         name: "impulse price 1",
         label: "Цена импульса (Вход 1)",
         type: "Float",
-        value: null,
+        tooltip: 'подсказка', value: null,
         placeholder: "дробь",
       },
       {
@@ -23,7 +23,7 @@ export const machineCranSettings = {
         name: "impulse price 2",
         label: "Цена импульса (Вход 2)",
         type: "Float",
-        value: null,
+        tooltip: 'подсказка', value: null,
         placeholder: "дробь",
       },
       {
@@ -31,7 +31,7 @@ export const machineCranSettings = {
         name: "terminal amount",
         label: "Сумма на терминале (MDB)",
         type: "Float",
-        value: null,
+        tooltip: 'подсказка', value: null,
         placeholder: "дробь",
       },
     ],
@@ -45,7 +45,7 @@ export const machineCranSettings = {
         name: "low position",
         label: "В нижнем положении",
         type: "Float",
-        value: null,
+        tooltip: 'подсказка', value: null,
         placeholder: "дробь",
       },
       {
@@ -53,7 +53,7 @@ export const machineCranSettings = {
         name: "top position",
         label: "В верхнем положении",
         type: "Float",
-        value: null,
+        tooltip: 'подсказка', value: null,
         placeholder: "дробь",
       },
       {
@@ -61,7 +61,7 @@ export const machineCranSettings = {
         name: "low position prize",
         label: "В нижнем положении (призовая)",
         type: "Float",
-        value: null,
+        tooltip: 'подсказка', value: null,
         placeholder: "дробь",
       },
       {
@@ -69,7 +69,7 @@ export const machineCranSettings = {
         name: "top position prize",
         label: "В верхнем положении (призовая)",
         type: "Float",
-        value: null,
+        tooltip: 'подсказка', value: null,
         placeholder: "дробь",
       },
     ],
@@ -85,7 +85,7 @@ export const machineCranSettings = {
         name: "speedX",
         label: "Скорость 'влево-вправо'",
         type: "Int",
-        value: null,
+        tooltip: 'подсказка', value: null,
         placeholder: "целое",
         suffix: ' %'
       },
@@ -94,7 +94,7 @@ export const machineCranSettings = {
         name: "speedZ",
         label: "Скорость 'вперед-назад'",
         type: "Int",
-        value: null,
+        tooltip: 'подсказка', value: null,
         placeholder: "целое",
         suffix: ' %'
       },
@@ -103,7 +103,7 @@ export const machineCranSettings = {
         name: "speedY",
         label: "Скорость 'подъем-опускание'",
         type: "Int",
-        value: null,
+        tooltip: 'подсказка', value: null,
         placeholder: "целое",
         suffix: ' %'
       },
@@ -118,14 +118,14 @@ export const machineCranSettings = {
         name: "win-win mode",
         label: "Беспроигрышный режим",
         type: "Boolean",
-        value: true,
+        tooltip: 'подсказка', value: true,
       },
       {
         id: "p008",
         name: "games before prize",
         label: "Кол-во игр до призовой",
         type: "Int",
-        value: null,
+        tooltip: 'подсказка', value: null,
         placeholder: "целое",
       },
       {
@@ -133,7 +133,7 @@ export const machineCranSettings = {
         name: "game time",
         label: "Время игры, сек",
         type: "Int",
-        value: null,
+        tooltip: 'подсказка', value: null,
         placeholder: "целое",
       },
       {
@@ -141,7 +141,7 @@ export const machineCranSettings = {
         name: "from payment to game",
         label: "Время от оплаты до игры, сек",
         type: "Float",
-        value: null,
+        tooltip: 'подсказка', value: null,
         placeholder: "целое",
       },
     ],
@@ -158,7 +158,7 @@ export const machineCranSettings = {
         name: "prize angle",
         label: "Угол отсека выдачи призов",
         type: "Int",
-        value: null,
+        tooltip: 'подсказка', value: null,
         placeholder: "целое",
       },
       {
@@ -168,7 +168,7 @@ export const machineCranSettings = {
         name: "player volume",
         label: "Громкость плеера",
         type: "Int",
-        value: null,
+        tooltip: 'подсказка', value: null,
         placeholder: "целое",
       },
     ],
@@ -183,7 +183,7 @@ export const machineCranSettings = {
         name: "connection device",
         label: "Модем=0/Внешний WiFi=1",
         type: "Boolean",
-        value: false,
+        tooltip: 'подсказка', value: false,
         placeholder: "целое",
       },
       {
@@ -191,7 +191,7 @@ export const machineCranSettings = {
         name: "connection name",
         label: "Имя внешней точки",
         type: "String",
-        value: "",
+        tooltip: 'подсказка', value: "",
         placeholder: "строка",
         isRequired: true
       },
@@ -200,7 +200,7 @@ export const machineCranSettings = {
         name: "connection password",
         label: "Пароль внешней точки",
         type: "Password",
-        value: "",
+        tooltip: 'подсказка', value: "",
         placeholder: "строка",
         isRequired: true
       },
@@ -216,7 +216,7 @@ export const machineCranSettings = {
         name: "5V",
         label: "Источник питания '+5', В",
         type: "Float",
-        value: null,
+        tooltip: 'подсказка', value: null,
         readonly: true
       },
       {
@@ -224,7 +224,7 @@ export const machineCranSettings = {
         name: "12V",
         label: "Источник питания '+12', В",
         type: "Float",
-        value: null,
+        tooltip: 'подсказка', value: null,
         readonly: true
       },
       {
@@ -232,7 +232,7 @@ export const machineCranSettings = {
         name: "12V pulse",
         label: "Источник питания 'Пульс +12', В",
         type: "Float",
-        value: null,
+        tooltip: 'подсказка', value: null,
         readonly: true
       },
       {
@@ -240,7 +240,7 @@ export const machineCranSettings = {
         name: "24V",
         label: "Источник питания '+24', В",
         type: "Float",
-        value: null,
+        tooltip: 'подсказка', value: null,
         readonly: true
       },
       {
@@ -248,7 +248,7 @@ export const machineCranSettings = {
         name: "48V",
         label: "Источник питания '+48', В",
         type: "Float",
-        value: null,
+        tooltip: 'подсказка', value: null,
         readonly: true
       },
       {
@@ -256,7 +256,7 @@ export const machineCranSettings = {
         name: "engine",
         label: "Источник питания 'Двигатели', В",
         type: "Float",
-        value: null,
+        tooltip: 'подсказка', value: null,
         readonly: true
       },
     ],
@@ -270,7 +270,7 @@ export const machineCranSettings = {
         name: "timeoutX",
         label: "Таймаут 'влево-вправо', мс",
         type: "Int",
-        value: null,
+        tooltip: 'подсказка', value: null,
         placeholder: "целое",
       },
       {
@@ -278,7 +278,7 @@ export const machineCranSettings = {
         name: "timeoutZ",
         label: "Таймаут 'вперед-назад', мс",
         type: "Int",
-        value: null,
+        tooltip: 'подсказка', value: null,
         placeholder: "целое",
       },
       {
@@ -286,7 +286,7 @@ export const machineCranSettings = {
         name: "timeoutY",
         label: "Таймаут 'подъем-опускание', мс",
         type: "Int",
-        value: null,
+        tooltip: 'подсказка', value: null,
         placeholder: "целое",
       },
     ],
@@ -301,7 +301,7 @@ export const machineCranSettings = {
         name: "reset",
         label: "Сброс к заводским настройкам",
         type: "Int",
-        value: null,
+        tooltip: 'подсказка', value: null,
         placeholder: "целое",
       },
     ],
