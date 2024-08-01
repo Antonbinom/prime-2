@@ -1,15 +1,16 @@
 <template>
 <div class="cran-form">
-  <div
-    v-for="(settings, settingsName) in settingsSections"
-    :key="settingsName"
-    class="mx-auto surface-100 border-round-lg md:p-4 p-3 max-w-30rem mb-3 flex flex-column"
+  <Card 
+  v-for="(settings, settingsName) in settingsSections"
+  :key="settingsName"
+  class="mx-auto surface-100 border-round-lg  max-w-30rem mb-3 flex flex-column"
   >
-    <h4 class="lg:text-2xl text-xl m-0 text-700 text-center">
+    <template #title>
       {{ settings.title }}
-    </h4>
-    <Divider />
-    <div
+      <Divider />
+    </template>
+    <template #content>
+      <div
       v-for="input in settings.inputs"
       :key="input.id"
       class="flex align-items-center justify-content-between mb-4"
@@ -86,14 +87,16 @@
       @click="onSubmit(settings)"
       />
     </div>
-    <Button
+    </template>
+    <template #footer>
+      <Button
       v-if="settingsName === 'power'"
       label="Обновить"
       :disabled="isLoading"
       class="p-button-success"
       @click="onSubmit(settings)"
     />
-    <Button
+      <Button
       v-else-if="settingsName === 'defaultSettings'"
       label="Применить"
       class="p-button-danger"
@@ -108,7 +111,8 @@
       @click="onSubmit(settings)"
     />
     <InlineMessage v-if="settingsName==='network' && settings.isInvalid" class="mt-3">Заполните поля</InlineMessage>
-  </div>
+    </template>
+</Card>
 </div>
 </template>
 
@@ -122,7 +126,7 @@ import InputNumber from "primevue/inputnumber";
 import Password from "primevue/password";
 import InputSwitch from "primevue/inputswitch";
 import LabelWithTooltip from "@/components/LabelWithTooltip.vue";
-
+import Card from 'primevue/card';
 export default {
   name: "App",
   components: {
@@ -133,7 +137,8 @@ export default {
     Password,
     InputSwitch,
     InlineMessage,
-    LabelWithTooltip
+    LabelWithTooltip,
+    Card
   },
   data() {
     return {
@@ -205,5 +210,8 @@ export default {
   position: absolute;
   padding-left: 3px;
   cursor: pointer;
+}
+.cran-form .p-card-title,.p-card-footer{
+  text-align: center;
 }
 </style>
