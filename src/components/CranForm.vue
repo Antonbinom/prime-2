@@ -3,7 +3,7 @@
   <Card 
   v-for="(settings, settingsName) in settingsSections"
   :key="settingsName"
-  class="mx-auto surface-100 border-round-lg  max-w-30rem mb-3 flex flex-column"
+  class="mx-auto surface-100 border-round-lg p-3 md:p-4 max-w-30rem mb-3 flex flex-column"
   >
     <template #title>
       {{ settings.title }}
@@ -93,20 +93,20 @@
       v-if="settingsName === 'power'"
       label="Обновить"
       :disabled="isLoading"
-      class="p-button-success"
+      class="p-button-success w-10"
       @click="onSubmit(settings)"
     />
       <Button
       v-else-if="settingsName === 'defaultSettings'"
       label="Применить"
-      class="p-button-danger"
+      class="p-button-danger w-100"
       :disabled="isLoading"
       @click="onReset($event)"
     />
     <Button
       v-else
       label="Применить"
-      class="p-button-success"
+      class="p-button-success w-10"
       :disabled="isLoading"
       @click="onSubmit(settings)"
     />
@@ -213,5 +213,11 @@ export default {
 }
 .cran-form .p-card-title,.p-card-footer{
   text-align: center;
+}
+.cran-form .p-card-body {
+  padding: 0;
+}
+.cran-form .p-card-footer {
+  padding: 0;
 }
 </style>
